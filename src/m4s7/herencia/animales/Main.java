@@ -19,6 +19,11 @@ public class Main {
         dog.dormir();
         gato.comer();
         gato.dormir();
+        dog.dormir();
+        dog.comer();
+        dog.dormir();
+        dog.comer();
+
 
     }
 
