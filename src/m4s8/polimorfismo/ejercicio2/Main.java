@@ -13,7 +13,7 @@ public class Main {
 
         System.out.println("Area rectangulo de color "+area_Rectangulo.getColor()+ " es :" + area_Rectangulo.calcularArea());
         System.out.println("Area del circulo "+Circulo1.getColor()+" de tamaño " + Circulo1.getTamano()+ " es: " + Circulo1.calcularArea());
-        
+
     }
 
 }
