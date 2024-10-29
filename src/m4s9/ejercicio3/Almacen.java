@@ -11,7 +11,6 @@ public class Almacen<T> {
         lista = new ArrayList<>();
     }
 
-
     public void agregarItem(T item) {
         lista.add(item);
         System.out.println("El item se ha agregado en el almacen correctamente");
