@@ -1,0 +1,30 @@
+Cliente: Cliente{IdCliente=1, nombre='Luis', correoElectronico='abc@gmail.com', telefono='56988551214', direccion='avenida siempre viva 123'}
+Tipo de entrega: Reparto
+Tipo de pago: Tarjeta
+Total: 7400.0
+---------------------------
+Cliente: Cliente{IdCliente=1, nombre='Luis', correoElectronico='abc@gmail.com', telefono='56988551214', direccion='avenida siempre viva 123'}
+Tipo de entrega: Reparto
+Tipo de pago: Tarjeta
+Total: 7400.0
+---------------------------
+Cliente: Cliente{IdCliente=1, nombre='Luis', correoElectronico='abc@gmail.com', telefono='56988551214', direccion='avenida siempre viva 123'}
+Tipo de entrega: Reparto
+Tipo de pago: Tarjeta
+Total: 7400.0
+---------------------------
+Cliente: Cliente{IdCliente=1, nombre='Luis', correoElectronico='abc@gmail.com', telefono='56988551214', direccion='avenida siempre viva 123'}
+Tipo de entrega: Reparto
+Tipo de pago: Tarjeta
+Total: 7400.0
+---------------------------
+Cliente: Cliente{IdCliente=1, nombre='Luis', correoElectronico='abc@gmail.com', telefono='56988551214', direccion='avenida siempre viva 123'}
+Tipo de entrega: Reparto
+Tipo de pago: Tarjeta
+Total: 3000.0
+---------------------------
+Cliente: Cliente{IdCliente=1, nombre='Luis', correoElectronico='abc@gmail.com', telefono='56988551214', direccion='avenida siempre viva 123'}
+Tipo de entrega: Reparto
+Tipo de pago: Tarjeta
+Total: 3800.0
+---------------------------
