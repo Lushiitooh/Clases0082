@@ -1,0 +1,419 @@
+CREATE TABLE estudiantes(
+	id_estudiante Integer,
+	rut_estudiante Varchar(45),
+	nombre_estudiante Varchar(45),
+	fecha_nacimiento Varchar(45),
+	direccion Varchar(45),
+	correo Varchar(45),
+	telefono Varchar(45),
+	CONSTRAINT pk_estudiantes PRIMARY KEY (id_estudiante),
+	CONSTRAINT unique_rut UNIQUE (rut_estudiante)
+);
+
+CREATE TABLE programas(
+	id_programa Integer,
+	nombre_programa Varchar(45),
+	cantidad_horas Integer,
+	CONSTRAINT pk_programas PRIMARY KEY (id_programa)
+);
+
+CREATE TABLE modulos(
+	id_modulo Integer,
+	nombre_modulo Varchar(45),
+	cantidad_horas Integer,
+	CONSTRAINT pk_modulos PRIMARY KEY (id_modulo)
+);
+
+CREATE TABLE relatores(
+	id_relator Integer,
+	rut_relator Varchar(45),
+	nombre_relator Varchar(45),
+	titulo_relator Varchar(45),
+	anios_experiencia Integer,
+	valor_hora Integer,
+	CONSTRAINT pk_relatores PRIMARY KEY (id_relator),
+	CONSTRAINT unique_rut_relator UNIQUE (rut_relator)
+);
+
+CREATE TABLE cursos(
+	id_curso Integer,
+	codigo_curso Varchar(45),
+	cantidad_estudiantes Integer,
+	fecha_inicio Varchar(45),
+	fecha_termino Varchar(45),
+	id_programa Integer,
+	CONSTRAINT pk_cursos PRIMARY KEY (id_curso),
+	CONSTRAINT unique_codigo_curso UNIQUE (codigo_curso),
+	CONSTRAINT fk_cursos_programas FOREIGN KEY (id_programa) REFERENCES programas(id_programa)
+);
+
+CREATE TABLE cursos_estudiantes(
+	id_cursos_estudiantes Integer,
+	id_estudiante Integer,
+	id_curso Integer,
+	CONSTRAINT pk_cursos_estudiantes PRIMARY KEY (id_cursos_estudiantes),
+	CONSTRAINT fk_cursos_estudiantes_estudiantes FOREIGN KEY (id_estudiante) REFERENCES estudiantes(id_estudiante),
+	CONSTRAINT fk_cursos_estudiantes_cursos FOREIGN KEY (id_curso) REFERENCES cursos(id_curso)
+);
+
+CREATE TABLE cursos_relatores(
+	id_cursos_relatores Integer,
+	id_curso Integer,
+	id_relator Integer,
+	CONSTRAINT pk_cursos_relatores PRIMARY KEY (id_cursos_relatores),
+	CONSTRAINT fk_cursos_relatores_relatores FOREIGN KEY (id_relator) REFERENCES relatores(id_relator),
+	CONSTRAINT fk_cursos_relatores_curso FOREIGN KEY (id_curso) REFERENCES cursos(id_curso)
+);
+
+CREATE TABLE modulos_programas(
+	id_modulos_programas Integer,
+	id_programa Integer,
+	id_modulo Integer,
+	CONSTRAINT pk_modulos_programas PRIMARY KEY (id_modulos_programas),
+	CONSTRAINT fk_modulos_programas_programas FOREIGN KEY (id_programa) REFERENCES programas(id_programa),
+	CONSTRAINT fk_modulos_programas_modulos FOREIGN KEY (id_modulo) REFERENCES modulos(id_modulo)
+);
+
+CREATE TABLE modulos_cursos(
+	id_modulos_cursos Integer,
+	id_curso Integer,
+	id_modulo Integer,
+	CONSTRAINT pk_modulos_cursos PRIMARY KEY (id_modulos_cursos),
+	CONSTRAINT fk_modulos_cursos_cursos FOREIGN KEY (id_curso) REFERENCES cursos(id_curso),
+	CONSTRAINT fk_modulos_cursos_modulos FOREIGN KEY (id_modulo) REFERENCES modulos(id_modulo)
+);
+
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(1, '11111111-1', 'nombre_estudiante_1', '27-08-1990', 'dirección 1', 'estudiante_1@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(2, '22222222-1', 'nombre_estudiante_2', '27-08-1990', 'dirección 2', 'estudiante_2@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(3, '33333333-1', 'nombre_estudiante_3', '27-08-1990', 'dirección 3', 'estudiante_3@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(4, '44444444-1', 'nombre_estudiante_4', '27-08-1990', 'dirección 4', 'estudiante_4@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(5, '55555555-1', 'nombre_estudiante_5', '27-08-1990', 'dirección 5', 'estudiante_5@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(6, '66666666-1', 'nombre_estudiante_6', '27-08-1990', 'dirección 6', 'estudiante_6@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(7, '77777777-1', 'nombre_estudiante_7', '27-08-1990', 'dirección 7', 'estudiante_7@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(8, '88888888-1', 'nombre_estudiante_8', '27-08-1990', 'dirección 8', 'estudiante_8@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(9, '99999999-1', 'nombre_estudiante_9', '27-08-1990', 'dirección 9', 'estudiante_9@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(10, '11111111-2', 'nombre_estudiante_10', '27-08-1990', 'dirección 10', 'estudiante_10@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(11, '22222222-2', 'nombre_estudiante_11', '27-08-1990', 'dirección 11', 'estudiante_11@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(12, '33333333-2', 'nombre_estudiante_12', '27-08-1990', 'dirección 12', 'estudiante_12@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(13, '44444444-2', 'nombre_estudiante_13', '27-08-1990', 'dirección 13', 'estudiante_13@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(14, '55555555-2', 'nombre_estudiante_14', '27-08-1990', 'dirección 14', 'estudiante_14@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(15, '66666666-2', 'nombre_estudiante_15', '27-08-1990', 'dirección 15', 'estudiante_15@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(16, '77777777-2', 'nombre_estudiante_16', '27-08-1990', 'dirección 16', 'estudiante_16@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(17, '99999999-2', 'nombre_estudiante_17', '27-08-1990', 'dirección 17', 'estudiante_17@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(18, '11111111-3', 'nombre_estudiante_18', '27-08-1990', 'dirección 18', 'estudiante_18@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(19, '22222222-3', 'nombre_estudiante_19', '27-08-1990', 'dirección 19', 'estudiante_19@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(20, '33333333-3', 'nombre_estudiante_20', '27-08-1990', 'dirección 20', 'estudiante_20@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(21, '44444444-3', 'nombre_estudiante_21', '27-08-1990', 'dirección 21', 'estudiante_21@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(22, '55555555-3', 'nombre_estudiante_22', '27-08-1990', 'dirección 22', 'estudiante_22@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(23, '66666666-3', 'nombre_estudiante_23', '27-08-1990', 'dirección 23', 'estudiante_23@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(24, '77777777-3', 'nombre_estudiante_24', '27-08-1990', 'dirección 24', 'estudiante_24@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(25, '88888888-3', 'nombre_estudiante_25', '27-08-1990', 'dirección 25', 'estudiante_25@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(26, '99999999-3', 'nombre_estudiante_26', '27-08-1990', 'dirección 26', 'estudiante_26@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(27, '11111111-4', 'nombre_estudiante_27', '27-08-1990', 'dirección 27', 'estudiante_27@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(28, '22222222-4', 'nombre_estudiante_28', '27-08-1990', 'dirección 28', 'estudiante_28@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(29, '33333333-4', 'nombre_estudiante_29', '27-08-1990', 'dirección 29', 'estudiante_29@mail.com', '123456677889');
+INSERT INTO estudiantes(id_estudiante, rut_estudiante, nombre_estudiante, fecha_nacimiento, direccion, correo, telefono)
+VALUES(30, '44444444-4', 'nombre_estudiante_30', '27-08-1990', 'dirección 30', 'estudiante_30@mail.com', '123456677889');
+
+INSERT INTO programas(id_programa, nombre_programa, cantidad_horas)
+VALUES(1, 'Fullstack Java', 480);
+INSERT INTO programas(id_programa, nombre_programa, cantidad_horas)
+VALUES(2, 'Fullstack JavaScrip', 472);
+INSERT INTO programas(id_programa, nombre_programa, cantidad_horas)
+VALUES(3, 'Fullstack Python', 462);
+INSERT INTO programas(id_programa, nombre_programa, cantidad_horas)
+VALUES(4, 'Frontend VUE JS', 438);
+INSERT INTO programas(id_programa, nombre_programa, cantidad_horas)
+VALUES(5, 'Frontend React', 450);
+INSERT INTO programas(id_programa, nombre_programa, cantidad_horas)
+VALUES(6, 'Frontend Angular', 450);
+
+INSERT INTO modulos(id_modulo, nombre_modulo, cantidad_horas)
+VALUES(1, 'Desarrollo web frontend', 50);
+INSERT INTO modulos(id_modulo, nombre_modulo, cantidad_horas)
+VALUES(2, 'Base de datos', 50);
+INSERT INTO modulos(id_modulo, nombre_modulo, cantidad_horas)
+VALUES(3, 'Construcción de API Rest con Spring', 200);
+INSERT INTO modulos(id_modulo, nombre_modulo, cantidad_horas)
+VALUES(4, 'Construcción de API Rest con ExpressJS', 200);
+INSERT INTO modulos(id_modulo, nombre_modulo, cantidad_horas)
+VALUES(5, 'Construcción de API Rest con Django', 200);
+INSERT INTO modulos(id_modulo, nombre_modulo, cantidad_horas)
+VALUES(6, 'Construcción de SPA con VUEJS', 200);
+INSERT INTO modulos(id_modulo, nombre_modulo, cantidad_horas)
+VALUES(7, 'Construcción de SPA con React', 200);
+INSERT INTO modulos(id_modulo, nombre_modulo, cantidad_horas)
+VALUES(8, 'Construcción de SPA con Angular', 200);
+INSERT INTO modulos(id_modulo, nombre_modulo, cantidad_horas)
+VALUES(9, 'Seguridad', 50);
+
+INSERT INTO relatores(id_relator, rut_relator, nombre_relator, titulo_relator, anios_experiencia, valor_hora)
+VALUES(1, '11111111-5', 'nombre_relator_1', 'titulo_relator_1', 10, 10000);
+INSERT INTO relatores(id_relator, rut_relator, nombre_relator, titulo_relator, anios_experiencia, valor_hora)
+VALUES(2, '22222222-5', 'nombre_relator_2', 'titulo_relator_2', 10, 10000);
+INSERT INTO relatores(id_relator, rut_relator, nombre_relator, titulo_relator, anios_experiencia, valor_hora)
+VALUES(3, '33333333-5', 'nombre_relator_3', 'titulo_relator_3', 10, 10000);
+INSERT INTO relatores(id_relator, rut_relator, nombre_relator, titulo_relator, anios_experiencia, valor_hora)
+VALUES(4, '44444444-5', 'nombre_relator_4', 'titulo_relator_4', 10, 10000);
+INSERT INTO relatores(id_relator, rut_relator, nombre_relator, titulo_relator, anios_experiencia, valor_hora)
+VALUES(5, '55555555-5', 'nombre_relator_5', 'titulo_relator_5', 10, 10000);
+INSERT INTO relatores(id_relator, rut_relator, nombre_relator, titulo_relator, anios_experiencia, valor_hora)
+VALUES(6, '66666666-5', 'nombre_relator_6', 'titulo_relator_6', 10, 10000);
+INSERT INTO relatores(id_relator, rut_relator, nombre_relator, titulo_relator, anios_experiencia, valor_hora)
+VALUES(7, '77777777-5', 'nombre_relator_7', 'titulo_relator_7', 10, 10000);
+INSERT INTO relatores(id_relator, rut_relator, nombre_relator, titulo_relator, anios_experiencia, valor_hora)
+VALUES(8, '88888888-5', 'nombre_relator_8', 'titulo_relator_8', 10, 10000);
+INSERT INTO relatores(id_relator, rut_relator, nombre_relator, titulo_relator, anios_experiencia, valor_hora)
+VALUES(9, '99999999-5', 'nombre_relator_9', 'titulo_relator_9', 10, 10000);
+INSERT INTO relatores(id_relator, rut_relator, nombre_relator, titulo_relator, anios_experiencia, valor_hora)
+VALUES(10, '11111111-6', 'nombre_relator_10', 'titulo_relator_10', 10, 10000);
+
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(1, '1', 30, '27-08-2024', '27-02-2025', 1);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(2, '2', 30, '27-08-2024', '27-02-2025', 1);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(3, '3', 30, '27-08-2024', '27-02-2025', 2);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(4, '4', 30, '27-08-2024', '27-02-2025', 2);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(5, '5', 30, '27-08-2024', '27-02-2025', 3);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(6, '6', 30, '27-08-2024', '27-02-2025', 3);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(7, '7', 30, '27-08-2024', '27-02-2025', 4);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(8, '8', 30, '27-08-2024', '27-02-2025', 4);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(9, '9', 30, '27-08-2024', '27-02-2025', 5);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(10, '10', 30, '27-08-2024', '27-02-2025', 5);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(11, '11', 30, '27-08-2024', '27-02-2025', 6);
+INSERT INTO cursos(id_curso, codigo_curso, cantidad_estudiantes, fecha_inicio, fecha_termino, id_programa)
+VALUES(12, '12', 30, '27-08-2024', '27-02-2025', 6);
+
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(1, 1, 1);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(2, 2, 1);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(3, 3, 1);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(4, 4, 1);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(5, 5, 1);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(6, 6, 1);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(7, 7, 2);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(8, 8, 2);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(9, 9, 2);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(10, 10, 2);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(11, 11, 2);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(12, 12, 3);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(13, 13, 3);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(14, 14, 3);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(15, 15, 3);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(16, 16, 3);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(17, 17, 3);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(18, 18, 3);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(19, 19, 3);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(20, 20, 3);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(21, 21, 4);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(22, 22, 4);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(23, 23, 4);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(24, 24, 4);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(25, 25, 4);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(26, 26, 4);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(27, 27, 5);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(28, 28, 5);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(29, 29, 5);
+INSERT INTO cursos_estudiantes(id_cursos_estudiantes, id_estudiante, id_curso)
+VALUES(30, 30, 5);
+
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(1, 1, 1);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(2, 2, 1);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(3, 3, 2);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(4, 4, 2);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(5, 5, 3);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(6, 6, 3);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(7, 7, 4);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(8, 8, 4);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(9, 9, 5);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(10, 10, 5);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(11, 11, 6);
+INSERT INTO cursos_relatores(id_cursos_relatores, id_curso, id_relator)
+VALUES(12, 12, 6);
+
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(1, 1, 1);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(2, 2, 1);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(3, 3, 1);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(4, 4, 1);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(5, 5, 1);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(6, 6, 1);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(7, 1, 2);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(8, 2, 2);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(9, 3, 2);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(10, 4, 2);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(11, 5, 2);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(12, 6, 2);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(13, 1, 3);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(14, 2, 4);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(15, 3, 5);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(16, 4, 6);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(17, 5, 7);
+INSERT INTO modulos_programas(id_modulos_programas, id_programa, id_modulo)
+VALUES(18, 6, 8);
+
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(1, 1, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(2, 2, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(3, 3, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(4, 4, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(5, 5, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(6, 6, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(7, 7, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(8, 8, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(9, 9, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(10, 10, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(11, 11, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(12, 12, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(13, 1, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(14, 2, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(15, 3, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(16, 4, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(17, 5, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(18, 6, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(19, 7, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(20, 8, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(21, 9, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(22, 10, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(23, 11, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(24, 12, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(25, 1, 1);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(26, 2, 2);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(27, 3, 3);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(28, 4, 4);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(29, 5, 5);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(30, 6, 6);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(31, 7, 7);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(32, 8, 8);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(33, 9, 9);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(34, 10, 9);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(35, 11, 9);
+INSERT INTO modulos_cursos(id_modulos_cursos, id_curso, id_modulo)
+VALUES(36, 12, 9);
