@@ -1,4 +1,4 @@
-package modelo;
+/*package modelo;
 
 public class SupportCase {
     private String nombre;
@@ -38,4 +38,4 @@ public class SupportCase {
                 "Motivo de consulta: " + motivoConsulta + "\n" +
                 "Ubicación: " + ciudad + ", " + pais;
     }
-}
+}*/

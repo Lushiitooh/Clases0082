@@ -1,4 +1,4 @@
-package vista;
+/*package vista;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -33,4 +33,4 @@ public class Main {
         response.close();
         client.close();
     }
-}
+}*/

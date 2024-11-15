@@ -1,4 +1,4 @@
-package org.example.ejemploapi.controller;
+/*package org.example.ejemploapi.controller;
 
 import org.example.ejemploapi.entity.User;
 import org.example.ejemploapi.service.UserService;
@@ -46,4 +46,4 @@ public class UserController {
             return ResponseEntity.notFound().build();
         }
     }
-}
+}*/

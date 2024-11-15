@@ -1,4 +1,4 @@
-package org.example.ejemploapi;
+/*package org.example.ejemploapi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -12,4 +12,4 @@ public class EjemploapiApplication {
         SpringApplication.run(EjemploapiApplication.class, args);
     }
 
-}
+}*/

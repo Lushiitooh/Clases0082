@@ -1,4 +1,4 @@
-package org.example.ejemploapi.entity;
+/*package org.example.ejemploapi.entity;
 
 
 public class User {
@@ -35,4 +35,4 @@ public class User {
     public void setEmail(String email) {
         this.email = email;
     }
-}
+}*/

@@ -1,6 +1,5 @@
 package m4s8.polimorfismo.ejercicio3;
 
-import lombok.Data;
 
 
 public class ExposicionArte extends EventoBase{

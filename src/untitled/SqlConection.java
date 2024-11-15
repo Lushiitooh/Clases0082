@@ -1,4 +1,4 @@
-import java.sql.*;
+/*import java.sql.*;
 
 public class SqlConection {
         public static void main(String[] args) {
@@ -21,5 +21,5 @@ public class SqlConection {
                 System.out.println(e.getMessage());
             }
         }
-    }
+    }*/
 

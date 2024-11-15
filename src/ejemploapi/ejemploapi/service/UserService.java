@@ -1,4 +1,4 @@
-package org.example.ejemploapi.service;
+/*package org.example.ejemploapi.service;
 
 
 import org.example.ejemploapi.entity.User;
@@ -38,4 +38,4 @@ public class UserService {
     public boolean deleteUser(Long id) {
         return users.removeIf(user -> user.getId().equals(id));
     }
-}
+}*/

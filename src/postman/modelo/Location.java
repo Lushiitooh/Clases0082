@@ -1,4 +1,4 @@
-package modelo;
+/*package modelo;
 
 public class Location {
     private String city;
@@ -25,4 +25,4 @@ public class Location {
     public String toString() {
         return "Ubicación: " + city + ", " + country_name;
     }
-}
+}*/
