@@ -1,4 +1,4 @@
-import model.*;
+/*import model.*;
 import utils.CarritoCompras;
 import utils.Inventario;
 import utils.Venta;
@@ -28,4 +28,4 @@ public class Main {
 
 
     }
-}
+}*/
