@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Inventario {
-    private final Map<String,Integer> inventario = new HashMap<>();
+    private Map<String,Integer> inventario = new HashMap<>();
 
     public void agregarProducto(String nombre, int cantidad) {
         inventario.put(nombre, inventario.getOrDefault(nombre, 0) + cantidad);
