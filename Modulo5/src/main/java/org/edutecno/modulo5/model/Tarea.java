@@ -4,14 +4,16 @@ public class Tarea {
     private int id;
     private String nombre;
     private String descripcion;
+    private String fecha;
 
     public Tarea() {
     }
 
-    public Tarea(int id, String nombre, String descripcion) {
+    public Tarea(int id, String nombre, String descripcion, String fecha) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.fecha = fecha;
     }
 
     public int getId() {
@@ -37,6 +39,12 @@ public class Tarea {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+    public String getFecha(){
+        return fecha;
+    }
+    public void setFecha(String fecha){
+        this.fecha = fecha;
+    }
 
     @Override
     public String toString() {
@@ -44,6 +52,7 @@ public class Tarea {
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
+                ", fecha='" + fecha + '\'' +
                 '}';
     }
 }

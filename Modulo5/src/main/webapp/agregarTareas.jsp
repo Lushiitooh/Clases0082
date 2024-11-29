@@ -1,7 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8" language ="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Agregar Tarea</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
 <h1> Agregar Tarea</h1>
@@ -16,6 +18,9 @@
     <br><br>
     <label for="descripcion">Descripción de la tarea</label>
     <textarea id="descripcion" name="descripcion" required></textarea>
+    <br><br>
+    <label for="fecha">Fecha de la tarea:</label>
+    <input type="date" id="fecha" name="fecha" required>
     <br><br>
     <button type="submit">Agregar Tarea</button>
 </form>
