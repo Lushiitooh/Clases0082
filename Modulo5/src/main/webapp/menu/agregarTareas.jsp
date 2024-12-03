@@ -12,6 +12,7 @@
     <p style="color:red">${error}</p>
 </c:if>
 
+
 <form action="/menu/tareas" method="POST">
     <label for="nombre">Nombre de la tarea:</label>
     <input type="text" id="nombre" name="nombre" required>

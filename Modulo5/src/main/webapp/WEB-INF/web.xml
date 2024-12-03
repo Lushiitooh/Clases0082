@@ -28,5 +28,6 @@
         <url-pattern>/menu/listarTareas.jsp</url-pattern>
         <url-pattern>/menu/editarTareas.jsp</url-pattern>
         <url-pattern>/menu/*</url-pattern>
+
     </filter-mapping>
 </web-app>

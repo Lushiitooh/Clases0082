@@ -13,6 +13,7 @@ public class UsuarioService {
         usuarios.add(new Usuario(usuario,password));
     }
 
+
     //validarlo
     public static Usuario validarUsuario(String usuario, String password){
         for (Usuario listaUsuarioEncontrado : usuarios){

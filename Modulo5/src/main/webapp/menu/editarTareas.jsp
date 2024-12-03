@@ -5,6 +5,7 @@
     <title>Editar Tareas</title>
     <link rel="stylesheet" href="../assets/css/style.css">
 </head>
+
 <body>
 <h1>Editar Tarea</h1>
 <a href='/menu/listarTareas.jsp'> Volver a la lista </a>

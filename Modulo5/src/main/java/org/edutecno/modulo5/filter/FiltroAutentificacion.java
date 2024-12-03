@@ -29,6 +29,7 @@ public class FiltroAutentificacion implements Filter {
             usuario = (String)session.getAttribute("usuario");
         }
 
+
         if (usuario == null) {
             Cookie[] cookies = httpServletRequest.getCookies();
             if (cookies != null) {

@@ -14,6 +14,7 @@ import java.util.List;
 @WebServlet(name="EditarTareaServlet", value="/menu/editarTarea")
 public class EditarTareaServlet extends HttpServlet {
 
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
         int id = Integer.parseInt(request.getParameter("id"));
 

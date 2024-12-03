@@ -17,6 +17,7 @@ import java.util.Queue;
 @WebServlet(name ="TareaServlet", value="/menu/tareas")
 public class TareaServlet extends HttpServlet {
     //Lista de Tareas
+
     private static final List<Tarea> tareas = new ArrayList<>();
     private static final Queue<Integer> idsDisponibles = new LinkedList<>();
     private static int idContador = 1;

@@ -12,6 +12,7 @@ public class Usuario {
         this.password = password;
     }
 
+
     public String getUsuario() {
         return usuario;
     }

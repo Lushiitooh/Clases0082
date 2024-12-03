@@ -36,6 +36,7 @@ public class LoginServlet extends HttpServlet {
             cookie.setHttpOnly(true);
             cookie.setPath("/");
             response.addCookie(cookie);
+
            // System.out.println(cookie);
             //System.out.println("se guardo correctamente la cookie");
 

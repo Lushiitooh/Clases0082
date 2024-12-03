@@ -24,6 +24,7 @@
   <label>Usuario:</label>
   <input type="text" id="usuario" name="usuario" value="<%=cookieUsuario%>" required>
   <br><br>
+
   <label>Contraseña:</label>
   <input type="text" id="password" name="password" required>
   <br><br>

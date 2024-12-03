@@ -9,6 +9,7 @@ import org.edutecno.modulo5.service.UsuarioService;
 
 import java.io.IOException;
 
+
 @WebServlet(name="RegistroUsuarioServlet", value="/registro")
 public class RegistroUsuarioServlet extends HttpServlet {
 

@@ -22,6 +22,7 @@
             <!--for(Tarea tarea : tareas){-->
             <c:forEach var="tarea" items="${tareas}">
                 <tr>
+
                     <td>${tarea.id}</td>
                     <td>${tarea.nombre}</td>
                     <td>${tarea.descripcion}</td>
