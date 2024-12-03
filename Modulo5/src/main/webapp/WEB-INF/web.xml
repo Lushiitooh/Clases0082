@@ -8,4 +8,25 @@
             index.jsp
         </welcome-file>
     </welcome-file-list>
+    <filter>
+        <filter-name>
+            FiltroAutentificacion
+        </filter-name>
+        <filter-class>
+            org.edutecno.modulo5.filter.FiltroAutentificacion
+        </filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>
+            FiltroAutentificacion
+        </filter-name>
+        <url-pattern>/menu/editarTarea</url-pattern>
+        <url-pattern>/menu/eliminarTarea</url-pattern>
+        <url-pattern>/menu/tareas</url-pattern>
+        <url-pattern>/menu.jsp</url-pattern>
+        <url-pattern>/menu/agregarTareas.jsp</url-pattern>
+        <url-pattern>/menu/listarTareas.jsp</url-pattern>
+        <url-pattern>/menu/editarTareas.jsp</url-pattern>
+        <url-pattern>/menu/*</url-pattern>
+    </filter-mapping>
 </web-app>

@@ -3,12 +3,12 @@
 <html>
 <head>
     <title>Editar Tareas</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <h1>Editar Tarea</h1>
-<a href='listarTareas.jsp'> Volver a la lista </a>
-<form action="editarTarea" method="POST">
+<a href='/menu/listarTareas.jsp'> Volver a la lista </a>
+<form action="/menu/editarTarea" method="POST">
     <input type="hidden" name="id" value="${tarea.id}" required>
     <label for="nombre">Nombre:</label>
     <input type="text" id="nombre" name="nombre" value="${tarea.nombre}" required>

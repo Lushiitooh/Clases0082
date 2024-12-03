@@ -3,16 +3,16 @@
 <html>
 <head>
     <title>Agregar Tarea</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <h1> Agregar Tarea</h1>
-<a href='index.jsp'> Volver al inicio </a>
+<a href='../menu.jsp'> Volver al inicio </a>
 <c:if test="${not empty error}">
     <p style="color:red">${error}</p>
 </c:if>
 
-<form action="tareas" method="POST">
+<form action="/menu/tareas" method="POST">
     <label for="nombre">Nombre de la tarea:</label>
     <input type="text" id="nombre" name="nombre" required>
     <br><br>

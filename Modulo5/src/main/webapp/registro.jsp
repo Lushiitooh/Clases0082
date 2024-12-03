@@ -4,6 +4,7 @@
   <title>Login</title>
 </head>
 <body>
+<h1>Registrarse</h1>
 <form action="registro" method="POST">
   <label>Usuario:</label>
   <input type="text" id="usuario" name="usuario" required>

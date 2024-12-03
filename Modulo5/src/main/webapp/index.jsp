@@ -8,7 +8,7 @@
   <h1> Bienvenidos a Gestor de Tareas 0082</h1>
 
   <br><br>
-  <a href="agregarTareas.jsp">Agregar Tarea</a>
-  <a href="listarTareas.jsp">Listar Tareas</a>
+  <a href="registro.jsp">Registrarse</a>
+  <a href="login.jsp">Iniciar Sesión</a>
   </body>
 </html>

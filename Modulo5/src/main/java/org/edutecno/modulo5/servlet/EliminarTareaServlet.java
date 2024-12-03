@@ -10,7 +10,7 @@ import org.edutecno.modulo5.model.Tarea;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name="EliminarTareaServlet", value="/eliminarTarea")
+@WebServlet(name="EliminarTareaServlet", value="/menu/eliminarTarea")
 public class EliminarTareaServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));

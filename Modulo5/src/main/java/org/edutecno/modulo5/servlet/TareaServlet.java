@@ -14,7 +14,7 @@ import java.util.Queue;
 
 
 //Listar tareas, Crear Tareas
-@WebServlet(name ="TareaServlet", value="/tareas")
+@WebServlet(name ="TareaServlet", value="/menu/tareas")
 public class TareaServlet extends HttpServlet {
     //Lista de Tareas
     private static final List<Tarea> tareas = new ArrayList<>();
@@ -27,7 +27,7 @@ public class TareaServlet extends HttpServlet {
             getServletContext().setAttribute("tareas",tareas);
 
             //Reedirige a la vista listarTareas.jsp
-            request.getRequestDispatcher("listarTareas.jsp").forward(request,response);
+            request.getRequestDispatcher("/menu/listarTareas.jsp").forward(request,response);
 
     }
 
@@ -38,14 +38,14 @@ public class TareaServlet extends HttpServlet {
 
         if(nombre == null || nombre.isEmpty() || descripcion == null || descripcion.isEmpty() || fecha == null || fecha.isEmpty()){
             request.setAttribute("error", "Todos los campos son obligatorios");
-            request.getRequestDispatcher("agregarTareas.jsp").forward(request,response);
+            request.getRequestDispatcher("/menu/agregarTareas.jsp").forward(request,response);
             return;
         }
 
         int id = idsDisponibles.isEmpty() ? idContador++ : idsDisponibles.poll();
         Tarea nuevaTarea = new Tarea(id, nombre, descripcion, fecha);
         tareas.add(nuevaTarea);
-        response.sendRedirect("tareas");
+        response.sendRedirect("/menu/tareas");
     }
     public static void eliminarTarea(int id){
         tareas.removeIf(tarea->tarea.getId()==id);

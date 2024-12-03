@@ -4,11 +4,11 @@
 <html>
 <head>
     <title>Lista de Tareas 2</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
 <h1> Lista de Tareas</h1>
-<a href='index.jsp'> Volver al inicio </a>
+<a href='../menu.jsp'> Volver al inicio </a>
 <!--if(tareas.isEmpty()){-->
 <c:choose>
     <c:when test="${not empty tareas}">
@@ -27,8 +27,8 @@
                     <td>${tarea.descripcion}</td>
                     <td>${tarea.fecha}</td>
                     <td>
-                        <a href="editarTarea?id=${tarea.id}">Editar</a>
-                        <a href="eliminarTarea?id=${tarea.id}" onclick="return confirm('¿Desea Eliminar?');">Eliminar</a>
+                        <a href="/menu/editarTarea?id=${tarea.id}">Editar</a>
+                        <a href="/menu/eliminarTarea?id=${tarea.id}" onclick="return confirm('¿Desea Eliminar?');">Eliminar</a>
 
                     </td>
                 </tr>

@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.List;
 
 
-@WebServlet(name="EditarTareaServlet", value="/editarTarea")
+@WebServlet(name="EditarTareaServlet", value="/menu/editarTarea")
 public class EditarTareaServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
