@@ -31,7 +31,7 @@ public class LoginServlet extends HttpServlet {
         String recordar = request.getParameter("recordar");
         if("on".equals(recordar)){
             Cookie cookie = new Cookie("usuario", usuario);
-            cookie.setMaxAge(15);
+            cookie.setMaxAge(60*60);
            // System.out.println("se acciono el tiempo");
             cookie.setHttpOnly(true);
             cookie.setPath("/");

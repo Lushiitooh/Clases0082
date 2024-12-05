@@ -16,8 +16,6 @@ public class EliminarTareaServlet extends HttpServlet {
 
         int id = Integer.parseInt(request.getParameter("id"));
 
-        //List<Tarea> tareas = (List<Tarea>)getServletContext().getAttribute("tareas");
-        //tareas.removeIf(tarea->tarea.getId()==id);
         TareaServlet.eliminarTarea(id);
         getServletContext().setAttribute("mesagge","Tarea eliminada exitosamente");
         response.sendRedirect("tareas");

@@ -23,11 +23,12 @@
         <url-pattern>/menu/editarTarea</url-pattern>
         <url-pattern>/menu/eliminarTarea</url-pattern>
         <url-pattern>/menu/tareas</url-pattern>
-        <url-pattern>/menu.jsp</url-pattern>
+        <url-pattern>/menu/menu.jsp</url-pattern>
         <url-pattern>/menu/agregarTareas.jsp</url-pattern>
         <url-pattern>/menu/listarTareas.jsp</url-pattern>
         <url-pattern>/menu/editarTareas.jsp</url-pattern>
         <url-pattern>/menu/*</url-pattern>
+
 
     </filter-mapping>
 </web-app>

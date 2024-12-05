@@ -7,7 +7,7 @@
 </head>
 <body>
 <h1> Agregar Tarea</h1>
-<a href='../menu.jsp'> Volver al inicio </a>
+<a href='menu.jsp'> Volver al inicio </a>
 <c:if test="${not empty error}">
     <p style="color:red">${error}</p>
 </c:if>

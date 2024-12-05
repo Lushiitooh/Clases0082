@@ -9,7 +9,7 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/menu/tareas","/menu/editarTarea","/menu/eliminarTarea","/menu.jsp","/menu/agregarTareas.jsp","/menu/editarTareas.jsp","/menu/listarTareas.jsp"})
+@WebFilter(urlPatterns = {"/menu/tareas","/menu/editarTarea","/menu/eliminarTarea","/menu/menu.jsp","/menu/agregarTareas.jsp","/menu/editarTareas.jsp","/menu/listarTareas.jsp"})
 public class FiltroAutentificacion implements Filter {
 
     @Override

@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1> Lista de Tareas</h1>
-<a href='../menu.jsp'> Volver al inicio </a>
+<a href='menu.jsp'> Volver al inicio </a>
 <!--if(tareas.isEmpty()){-->
 <c:choose>
     <c:when test="${not empty tareas}">
